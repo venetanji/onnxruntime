@@ -1,4 +1,5 @@
 # build, distribute, and bins (+ python proto bindings)
+tools/android_custom_build/QAIRT
 build
 build_*/
 .build_debug/*

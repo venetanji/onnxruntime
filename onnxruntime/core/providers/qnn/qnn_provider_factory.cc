@@ -31,3 +31,8 @@ std::shared_ptr<IExecutionProviderFactory> QNNProviderFactoryCreator::Create(con
 }
 
 }  // namespace onnxruntime
+
+ORT_API_STATUS_IMPL(OrtSessionOptionsAppendExecutionProvider_Qnn, _In_ OrtSessionOptions* options, int use_arena) {
+  options->provider_factories.push_back(onnxruntime::QNNProviderFactoryCreator::Create(use_arena));
+  return nullptr;
+}
